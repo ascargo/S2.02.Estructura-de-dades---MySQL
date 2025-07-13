@@ -1,0 +1,2 @@
+SELECT c.city, SUM(ohp.quantity) AS number_of_drinks_sold FROM orders o JOIN customer c ON o.customer_id = c.customer_id JOIN order_has_product ohp ON o.order_id = ohp.order_id JOIN product p ON p.product_id = ohp.product_id WHERE p.type = 'drink' AND c.city = 'New York' GROUP BY c.city;
+SELECT COUNT(*) AS numberOfOrdersByEmployee, e.name FROM orders o JOIN store s ON o.store_id = s.store_id JOIN employee e ON e.store_id = s.store_id WHERE e.employee_id = 1;
